@@ -1,1 +1,14 @@
-h1 verified
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='description', content='LTI 1.1 Tool consumer')
+    base(href='/')
+  body
+    form#ltiForm(name='ltiForm', action= action, method= method)
+      each val,key in LTIParams
+        input(name= key, value= val, type="hidden")
+      button(name= submit, value= submit, type="hidden")
+    script.
+      document.getElementById("ltiForm").submit();

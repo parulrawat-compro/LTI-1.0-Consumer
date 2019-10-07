@@ -3,42 +3,46 @@ html
   head
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css', integrity='sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu', crossorigin='anonymous')
   body
-    h2 LT 1.0 TOOL CONSUMER
-    form#ltiForm(action='/verify', method='GET')
+    h2 LTI 1.0 TOOL CONSUMER
+    form.container#ltiForm(action='/verify', method='GET')
         .form-group
-          |lti_message_type:
-          input.col-5(name='lti_message_type', type='input', value='basic-lti-launch-request')
+          label.col-lg-3 lti_message_type:
+          input.col-lg-3.col-5(name='lti_message_type', type='input', value='basic-lti-launch-request')
           br
         .form-group
-          |lti_version:
-          input(name='lti_version', type='input', value='LTI-1p0')
+          label.col-lg-3 lti_version:
+          input.col-lg-3(name='lti_version', type='input', value='LTI-1p0')
           br
         .form-group
-          |resource_link_id:
-          input(name='resource_link_id', type='input', value='resourceLinkId')
+          label.col-lg-3 resource_link_id:
+          input.col-lg-3(name='resource_link_id', type='input', value='context1-hu3iw')
           br
         .form-group
-          |resource_link_title:
-          input(name='resource_link_title', type='input', value='jisc.ac.uk')
+          label.col-lg-3 context_id:
+          input.col-lg-3(name='context_id', type='input', value='context1')
           br
         .form-group
-          |tool_secret:
-          input(name='tool_secret', type='input', value='secret1')
+          label.col-lg-3 resource_link_title:
+          input.col-lg-3(name='resource_link_title', type='input', value='Attempting to connect ChemVintage')
           br
         .form-group
-          |oauth_consumer_key:
-          input(name='oauth_consumer_key', type='input', value='jisc.ac.uk')
+          label.col-lg-3 oauth_consumer_key:
+          input.col-lg-3(name='oauth_consumer_key', type='input', value='test-2')
           br
         .form-group
-          |oauth_nonce:
-          input(name='oauth_nonce', type='input', value='MTUxNTM2NzA0Nw==')
+          label.col-lg-3 oauth_signature_method:
+          input.col-lg-3(name='oauth_signature_method', type='input', value='HMAC-SHA1')
           br
         .form-group
-          |oauth_signature_method:
-          input(name='oauth_signature_method', type='input', value='HMAC-SHA1')
+          label.col-lg-3 tool_secret:
+          input.col-lg-3(name='tool_secret', type='input', value='5a1cfe53171ced6a523d988594da5344')
           br
         .form-group
-          |oauth_version:
-          input(name='oauth_version', type='input', value='1.0')
+          label.col-lg-3 tool_consumer_instance_url:
+          input.col-lg-3(name='tool_consumer_instance_url', type='input', value='https://www.chemvantage.org/lti/')
           br
-          input(type='submit', value='Submit', onClick='a()')
+        .form-group
+          label.col-lg-3 oauth_version:
+          input.col-lg-3(name='oauth_version', type='input', value='1.0')
+          br
+        input(type='submit', value='Submit')
