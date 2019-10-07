@@ -4,9 +4,9 @@ var ouath = require ('oauth-sign');
 var crypto = require('crypto');
 var timestamp = Math.round(Date.now() / 1000);
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-debugger
+
+router.get('/', function(req, res) {
+
   var LTIParams = {
     
     //REQUIRED
@@ -20,11 +20,10 @@ debugger
     
     // OAuth 1.0 params
     oauth_consumer_key: req.query.oauth_consumer_key,
-    oauth_signature_method: 'HMAC-SHA1',
+    oauth_signature_method: req.query.oauth_signature_method,
     oauth_timestamp: timestamp, 
     oauth_nonce: timestamp+crypto.randomBytes(32).toString('base64'),
-    oauth_version: '1.0'
-
+    oauth_version: req.query.oauth_version
   }
 
   var obj = {
@@ -37,11 +36,11 @@ debugger
   delete req.query.tool_secret;
 
   try {
-    
+
     //SIGN
     LTIParams.oauth_signature = ouath.hmacsign('POST', obj.tool_provider_url, LTIParams, obj.tool_secret);
-    
-    res.render('verify.jade', {
+
+    res.render('sign.jade', {
       title: 'ChemVintage',
       LTIParams: LTIParams,
       action: obj.tool_provider_url,
@@ -50,6 +49,7 @@ debugger
   } catch (e) {
     console.log(e.message);
   }
+
 });
 
 module.exports = router;

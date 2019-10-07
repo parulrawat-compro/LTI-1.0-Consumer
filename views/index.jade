@@ -1,10 +1,11 @@
 doctype html
 html
   head
+    title=title
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css', integrity='sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu', crossorigin='anonymous')
   body
     h2 LTI 1.0 TOOL CONSUMER
-    form.container#ltiForm(action='/verify', method='GET')
+    form.container#ltiForm(action='/sign', method='GET')
         .form-group
           label.col-lg-3 lti_message_type:
           input.col-lg-3.col-5(name='lti_message_type', type='input', value='basic-lti-launch-request')
