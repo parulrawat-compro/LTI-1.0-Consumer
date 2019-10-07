@@ -6,7 +6,7 @@ var timestamp = Math.round(Date.now() / 1000);
 
 
 router.get('/', function(req, res) {
-debugger
+
   var LTIParams = {
     
     //REQUIRED
