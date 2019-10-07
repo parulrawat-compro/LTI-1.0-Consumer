@@ -6,7 +6,7 @@ var timestamp = Math.round(Date.now() / 1000);
 
 
 router.get('/', function(req, res) {
-
+debugger
   var LTIParams = {
     
     //REQUIRED
@@ -39,7 +39,7 @@ router.get('/', function(req, res) {
 
     //SIGN
     LTIParams.oauth_signature = ouath.hmacsign('POST', obj.tool_provider_url, LTIParams, obj.tool_secret);
-
+    console.log(LTIParams)
     res.render('sign.jade', {
       title: 'ChemVintage',
       LTIParams: LTIParams,
