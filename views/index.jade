@@ -8,11 +8,11 @@ html
     form.container#ltiForm(action='/sign', method='GET')
         .form-group
           label.col-lg-3 lti_message_type:
-          input.col-lg-3.col-5(name='lti_message_type', type='input', value='basic-lti-launch-request')
+          input.col-lg-3.col-5(name='lti_message_type', type='input', value='basic-lti-launch-request', readonly)
           br
         .form-group
           label.col-lg-3 lti_version:
-          input.col-lg-3(name='lti_version', type='input', value='LTI-1p0')
+          input.col-lg-3(name='lti_version', type='input', value='LTI-1p0', readonly)
           br
         .form-group
           label.col-lg-3 resource_link_id:
@@ -32,7 +32,7 @@ html
           br
         .form-group
           label.col-lg-3 oauth_signature_method:
-          input.col-lg-3(name='oauth_signature_method', type='input', value='HMAC-SHA1')
+          input.col-lg-3(name='oauth_signature_method', type='input', value='HMAC-SHA1', readonly)
           br
         .form-group
           label.col-lg-3 tool_secret:
@@ -44,6 +44,6 @@ html
           br
         .form-group
           label.col-lg-3 oauth_version:
-          input.col-lg-3(name='oauth_version', type='input', value='1.0')
+          input.col-lg-3(name='oauth_version', type='input', value='1.0', readonly)
           br
         input(type='submit', value='Submit')
