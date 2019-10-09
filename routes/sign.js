@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
   var LTIParams = {
     
     //REQUIRED
-    lti_message_type: req.query.lti_message_type,
+    lti_message_type: req.query.lti_message_type, 
     lti_version: req.query.lti_version,
     resource_link_id: req.query.resource_link_id,
 
